@@ -1,0 +1,24 @@
+def patternE(N):
+    a=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    for i in range(N+1,0,-1):
+        for j in range(i,N+1):
+            print(a[j-1],end='')
+        print('\r')
+if __name__=="__main__":
+    N=int(input())
+    patternE(N)
+    
+    
+ O/p 
+ 5
+
+
+E
+
+DE
+
+CDE
+
+BCDE
+
+ABCDE
