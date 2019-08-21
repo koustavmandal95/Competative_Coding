@@ -28,6 +28,14 @@ def binpattern(N):
             for k in range(0,i):
                 print("0",end='')
             print("\r")
+def Numpattern(N):
+    for i in range(N,0,-1):
+        for k in range(i,N):
+            print(k,end='')
+        for j in range(i,0,-1):
+            print(N,end="")
+        print("\r")
 if __name__=="__main__":
     N=int(input())
-    binpattern(N)
+    Numpattern(N)
+
