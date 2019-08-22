@@ -53,9 +53,18 @@ def Butterfly(N):
             for k1 in range(i,2*N):
                 print("*",end='')
             print("\r")
+def revnum(N):
+    for i in range(1,N+1): # Hint what is the summation of n elements ?
+        if i%2==1:
+            for j in range(((i*(i+1))//2)-i+1,((i*(i+1))//2)+1):
+                print(j,end=' ')
+        if i%2==0:
+            for j in range(((i*(i+1))//2),((i*(i+1))//2)-i,-1):
+                print(j,end=' ')
+        print("\r")
 if __name__=="__main__":
     N=int(input("Please give a number:-"))
-    Butterfly(N)
-        
+    revnum(N)
+
 
 
