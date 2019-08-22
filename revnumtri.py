@@ -16,14 +16,20 @@ if __name__=="__main__":
 '''
 =================== RESTART: K:/python files/revnumtri.py ===================
 Enter the number:--> 3
-ABCCBA
- ABBA 
-  AA  
->>> 
+ABCCBA
+
+ ABBA 
+
+  AA  
+
 =================== RESTART: K:/python files/revnumtri.py ===================
 Enter the number:--> 4
-ABCDDCBA
- ABCCBA 
-  ABBA  
-   AA   
+ABCDDCBA
+
+ ABCCBA 
+
+  ABBA  
+
+   AA   
+
 '''
