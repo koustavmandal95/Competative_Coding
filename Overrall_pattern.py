@@ -74,6 +74,25 @@ def revnum(N):
             for j in range(((i*(i+1))//2),((i*(i+1))//2)-i,-1):
                 print(j,end=' ')
         print("\r")
+def galaxystar(N):
+    N_new=N
+    N_mid=m.ceil(N/2)
+    if N%2==0:
+        N_new=N+1
+        N_mid=m.ceil(N_new/2)
+    for i in range(1,N_new+1):
+        if i<=N_mid:
+            for c in range(0,i):
+                print("*",end='')
+            print("\r")
+        if i>N_mid:
+            for c1 in range(i-N_mid,N_mid):
+                print("*",end='')
+            print("\r")
+if __name__=="__main__":
+    N=int(input("Please give a number:-"))
+    galaxystar(N) 
+
 if __name__=="__main__":
     N=int(input("Please give a number:-"))
     revnum(N)
