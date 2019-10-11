@@ -2,7 +2,7 @@
 using namespace std;
 int subs(string input, string output[])
 {
-    if(input.empty())
+    if(input.length()==0)
     {
         output[0]="%";
         return 1;
