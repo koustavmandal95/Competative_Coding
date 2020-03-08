@@ -1,4 +1,4 @@
-#include<iostream>
+#include<iostream> // all codes are garbage but runs.
 using namespace std;
 #define MAX 50000
 class Euler
