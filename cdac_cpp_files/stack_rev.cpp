@@ -35,11 +35,11 @@ void reverse(stack_in &S)
 	for (int i=S.size;i>=0; i--)
 	{
 
-		if(isblank(S.arr[i]))
-		//if(S.arr[i]=='-')
+		//if(isblank(S.arr[i]))
+		if(S.arr[i]=='-')
 		{
 			//cout << "The index i  " << i <<"\n";
-			while(copy.top>=1)
+			while(copy.top>=0)
 			{
 				cout << copy.pop();
 			}
@@ -49,20 +49,20 @@ void reverse(stack_in &S)
 					//cout << "The index outside if  " << i <<"\n";
 			copy.push(S.pop());
  	}
-	while(copy.top>=1)
+	while(copy.top>=0)
 	{
 		cout << copy.pop();
 	}
 }
 int main()
 {
-	char s[50]="Money is motivation";
+	char s[50]="Money-is-motivation-game";
 	cout << s<<"\n";
 	cout << "---------------------\n";
 	// great is india
 	int len = strlen(s);
-	stack_in stk(-1, len);
-	for (int i = 0; i<=strlen(s); i++)
+	stack_in stk(-1, len-1);
+	for (int i = 0; i<strlen(s); i++)
 	{
 		stk.push(s[i]);
 	}
