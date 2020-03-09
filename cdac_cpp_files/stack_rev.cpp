@@ -1,5 +1,6 @@
-#include<iostream>
+#include<iostream> // Don't drink and code!!
 #include<string.h>
+#include<ctype.h>
 using namespace std;
 class stack_in
 {
@@ -7,7 +8,7 @@ public:
 	int top;
 	int size;
 	char arr[50];
-	stack_in(int top, int size) :top(top),size(size)
+	stack_in(int top=-1, int size=-1) :top(top),size(size)
 	{
 
 	}
@@ -39,22 +40,28 @@ public:
 void reverse(stack_in &S)
 {
 	stack_in copy(S.top,S.size);
-	for (int i =S.size; i>=0; i--)
-	{
-		//cout << S.pop();
-		copy.arr[i] = S.pop();
-	}
+	copy.top = -1;
 	for (int i=S.size;i>=0; i--)
+	{
+
+		if(isblank(S.arr[i]))
+		{
+			while(copy.top>=0)
+			{
+				cout << copy.pop();
+			}
+ 		}
+		copy.push(S.pop());
+ 	}
+	while(copy.top>=0)
 	{
 		cout << copy.pop();
 	}
-	cout << "\n";
-	
-
 }
 int main()
 {
-	char s[50]="india is great";
+	char s[50]="india is great country";
+	cout << s<<"\n";
 	// great is india
 	int len = strlen(s);
 	stack_in stk(-1, len);
@@ -62,7 +69,7 @@ int main()
 	{
 		stk.push(s[i]);
 	}
-	stk.display();
+//	stk.display();
 	reverse(stk);
 	return 0;
 }
