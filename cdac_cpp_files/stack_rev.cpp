@@ -39,29 +39,34 @@ public:
 };
 void reverse(stack_in &S)
 {
-	stack_in copy(S.top,S.size);
-	copy.top = -1;
+	stack_in copy;
 	for (int i=S.size;i>=0; i--)
 	{
 
 		if(isblank(S.arr[i]))
+		//if(S.arr[i]=='-')
 		{
-			while(copy.top>=0)
+			//cout << "The index i  " << i <<"\n";
+			while(copy.top>=1)
 			{
 				cout << copy.pop();
 			}
+			cout<< S.pop();
+			continue;
  		}
-		copy.push(S.pop());
+					//cout << "The index outside if  " << i <<"\n";
+			copy.push(S.pop());
  	}
-	while(copy.top>=0)
+	while(copy.top>=1)
 	{
 		cout << copy.pop();
 	}
 }
 int main()
 {
-	char s[50]="india is great country";
+	char s[50]="Money is motivation";
 	cout << s<<"\n";
+	cout << "---------------------\n";
 	// great is india
 	int len = strlen(s);
 	stack_in stk(-1, len);
