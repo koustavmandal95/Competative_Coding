@@ -12,14 +12,6 @@ public:
 	{
 
 	}
-	bool isfull()
-	{
-		if (top >= size)
-		{
-			return 1;
-		}
-		return 0;
-	}
 	void push(char val)
 	{
 		arr[++top] = val;
