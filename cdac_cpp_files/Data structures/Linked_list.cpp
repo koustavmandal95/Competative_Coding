@@ -68,11 +68,37 @@ public:Linked_list():head(NULL),tail(NULL)
      tail = temp;
      tail->next=NULL;
  }
+void DeleteByValue(int id)
+{
+    student *trav = head;
+    if (head->id == id)
+    {
+        deleteFirst();
+    }
+     else if(head!=NULL)
+     {
+         while(trav->next !=NULL && trav->next->id!=id)
+         {
+             trav=trav->next;
+         }
+        if(trav->id!=id)
+             {
+                 cout << "Not found " <<  id <<"\n";
+                 return;
+             }
+         trav->next=trav->next->next;
+     }
+     
+}
  void deleteByPosition(int pos)
  {
      int count =0;
      student *trav = head;
-     if(head!=NULL)
+    if (pos==1)
+    {
+        deleteFirst();
+    }
+     else if(head!=NULL)
      {
          while(count != pos-2 && trav->next!=NULL)
          {
@@ -81,7 +107,7 @@ public:Linked_list():head(NULL),tail(NULL)
          }
         if(trav->next==NULL)
              {
-                 cout << " Position out of bound" << pos << "\n";
+                 cout << "Position out of bound " << pos << "\n";
                  return;
              }
          trav->next=trav->next->next;
@@ -117,6 +143,14 @@ public:Linked_list():head(NULL),tail(NULL)
         }
        }
  }
+void InsertAfter(int criteriaId,int id,string name)
+	{
+
+	}
+void InsertBefore(int criteriaId,int id,string name)
+	{
+
+	}
  void print()
  {
      student *temp = head;
@@ -140,9 +174,9 @@ L.append(500,"Aishwarya");
 L.prepend(1000,"Vivek");
 L.prepend(2000,"Suresh");
 L.InseryByPosition(4,250,"Dilip");
-L.InseryByPosition(4,250,"Mukesh");
-L.InseryByPosition(6,250,"Anil");
-L.InseryByPosition(11,250,"kanta");
+L.InseryByPosition(4,251,"Mukesh");
+L.InseryByPosition(6,252,"Anil");
+L.InseryByPosition(11,253,"kanta");
 L.print();
 cout<< "-------------------------\n";
 L.deleteFirst();
@@ -153,9 +187,11 @@ L.deleteLast();
 L.prepend(7777,"Ayushman");
 L.print();  
 cout<< "-------------------------\n";
-L.deleteByPosition(12);
+L.deleteByPosition(1);
 L.print();  
 cout<< "-------------------------\n";
+L.DeleteByValue(7777);
+L.print();
   
 return 0;
 }
