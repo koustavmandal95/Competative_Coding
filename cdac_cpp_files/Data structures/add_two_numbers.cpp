@@ -135,7 +135,7 @@ int main()
   int size_num2 = 1;
   int size =0;
   int num_1[] = {5,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9};
-  int num_2[] = {1,9,9};
+  int num_2[] = {1};
   Linked_list L1;
   Linked_list L2;
   Linked_list L3;
