@@ -1,0 +1,12 @@
+-----------------------------------------------------------------
+Delimiter /
+create procedure maxprice(IN cname varchar(20),OUT ans INTEGER)
+	BEGIN 
+	Select max(price) from product where categoryName = cname into ans;
+	end /
+Delimiter ;
+
+
+call maxprice('Defence',@ans);
+call maxprice('Retail',@ans);
+------------------------------------------------------------------
