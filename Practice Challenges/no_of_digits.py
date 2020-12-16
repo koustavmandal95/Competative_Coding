@@ -8,7 +8,3 @@ def digits(N,digit):
 if __name__=="__main__":
     N=int(input())
     print(digits(N,digit=0))
-'''
-156
-3
-'''
