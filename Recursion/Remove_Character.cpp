@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+void removeA(char input[]){
+    if(input[0] == '\0'){
+      return ;
+    }
+    if(input[0]!='a'){
+      return removeA(input+1);
+    }
+    else{
+      for(int i=0; input[i]!='\0';i++){
+        input[i] = input[i+1];
+      }
+      removeA(input);
+    }
+}
+int main(){
+  char input[100];
+  cin >> input;
+  removeA(input);
+  cout<< input << "\n";
+}
+/*
+>a
+koustav
+koustv
+
+>a
+koustaaaav
+koustv
+
+>a
+abcabcaba
+bcbcb
+*/
